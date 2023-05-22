@@ -1,6 +1,15 @@
-version: '3.9'
+version: "3.9"
 
 services:
+  #new app (angular_app)
+  angular_app:
+    container_name: angular_app
+    image: pee-angular_app:1.0.0
+    build: ./angular/my-front-app/
+    ports:
+      - 4200:4200
+    depends_on:
+      - java_app
   java_app:
     container_name: java_app
     image: pee-java_app:1.0.0
